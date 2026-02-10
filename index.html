@@ -359,14 +359,14 @@ const yesBtn = document.getElementById('yes');
  for(let i=0;i<70;i++){
   let h=document.createElement('div');
   h.className='heart';
-  h.innerHTML='♡';
+  h.innerHTML= "❤";
   h.style.left=Math.random()*100+'vw';
   h.style.animationDuration=(4+Math.random()*4)+'s';
   document.body.appendChild(h);
 
   let s=document.createElement('div');
   s.className='spark';
-   s.innerHTML='♡';      // ← magic line
+   s.innerHTML= "❤";   // ← magic line
 
   s.style.left=Math.random()*100+'vw';
   s.style.top=Math.random()*100+'vh';
