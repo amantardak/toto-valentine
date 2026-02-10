@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Toto 💖 Aman</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;500&display=swap');
+
+body{
+  margin:0;
+  background: radial-gradient(circle at top, #ffd6e7, #fff1f6, #ffe4ef);
+  font-family:'Poppins',sans-serif;
+  text-align:center;
+  overflow-x:hidden;
+}
+
+h1{
+  font-family:'Dancing Script',cursive;
+  color:#c2185b;
+  font-size:42px;
+  margin-top:20px;
+  animation: glow 5s infinite alternate;
+}
+
+@keyframes glow{
+ from{ text-shadow:0 0 5px #ff80ab;}
+ to{ text-shadow:0 0 18px #ff4081;}
+}
+
+.card{
+  background:white;
+  max-width:600px;
+  margin:20px auto;
+  padding:18px;
+  border-radius:18px;
+  box-shadow:0 0 20px rgba(0,0,0,0.1);
+}
+
+.story{
+  line-height:1.7;
+  color:#5d1049;
+}
+
+button{
+  padding:12px 24px;
+  border-radius:30px;
+  border:none;
+  margin:10px;
+  cursor:pointer;
+  font-size:17px;
+  transition:.3s;
+}
+
+#yes{background:#ff4081;color:white;}
+#yes:hover{transform:scale(1.1);box-shadow:0 0 12px pink;}
+
+#no{background:#333;color:white;position:absolute;}
+
+#voiceBox,#gallery,#videoBox,#timeline,#finalMessage{display:none;}
+
+img{
+ width:46%;
+ margin:4px;
+ border-radius:14px;
+ box-shadow:0 0 8px rgba(0,0,0,.1);
+ transition:.3s;
+}
+.quizBtn{
+  background:linear-gradient(45deg,#ff4081,#ff79a6);
+  border:none;
+  color:white;
+  padding:10px 22px;
+  border-radius:30px;
+  font-size:15px;
+  margin-top:10px;
+  box-shadow:0 4px 10px rgba(255,64,129,.3);
+  transition:.3s;
+}
+
+.quizBtn:hover{
+  transform:translateY(-2px) scale(1.05);
+  box-shadow:0 8px 16px rgba(255,64,129,.4);
+}
+
+img:hover{transform:scale(1.05);}
+.inputBox{position:relative;margin-top:12px;}
+
+.inputBox label{
+  position:absolute;
+  left:16px;top:14px;
+  color:#c2185b;
+  pointer-events:none;
+  transition:.3s;
+}
+
+.inputBox input:focus + label,
+.inputBox input:not(:placeholder-shown) + label{
+  top:-8px;
+  background:#fff;
+  padding:0 6px;
+  font-size:12px;
+}
+
+.timeline-item{
+ background:#fff;
+ margin:8px;
+ padding:10px;
+ border-radius:12px;
+ border-left:4px solid #ff4081;
+ text-align:left;
+}
+
+.heart{
+ position:fixed;
+ color:#ff4081;
+ animation: float 7s linear infinite;
+ font-size:20px;
+}
+#qa, #reply, textarea{
+  width:90%;
+  padding:14px;
+  border-radius:16px;
+  border:2px solid #ffb3c7;
+  outline:none;
+  font-size:16px;
+  background:linear-gradient(to right,#fff,#fff8fb);
+  box-shadow:0 6px 14px rgba(255,64,129,.12);
+  transition:.3s;
+  margin-top:8px;
+}
+
+#qa:focus, #reply:focus, textarea:focus{
+  border-color:#ff4081;
+  box-shadow:0 0 12px rgba(255,64,129,.3);
+  transform:scale(1.02);
+}
+
+@keyframes float{
+ from{transform:translateY(110vh) rotate(0);}
+ to{transform:translateY(-10vh) rotate(360deg);}
+}
+#quizMsg{
+  margin-top:10px;
+  padding:10px;
+  border-radius:14px;
+  background:#fff0f6;
+  color:#c2185b;
+  display:inline-block;
+  animation:pop .3s ease;
+}
+
+@keyframes pop{
+ from{transform:scale(.9);opacity:0;}
+ to{transform:scale(1);opacity:1;}
+}
+
+
+.heartBtn{
+  width:120px;
+  height:110px;
+  background:#ff4081;
+  border:none;
+  color:white;
+  font-size:20px;
+  cursor:pointer;
+align-items:center;
+  justify-content:center;
+  padding-top:6px;          /* tiny lift upward */
+  text-align:center;
+font-family:'Playfair Display', serif;   /* classy */
+  font-size:17px;
+  letter-spacing:.5px;
+
+clip-path: polygon(
+50% 12%, 62% 6%, 75% 6%, 86% 12%, 92% 22%,
+94% 32%, 90% 44%, 82% 56%, 70% 66%, 60% 74%,
+50% 82%, 40% 74%, 30% 66%, 18% 56%, 10% 44%,
+6% 32%, 8% 22%, 14% 12%, 25% 6%, 38% 6%
+);
+
+
+
+}
+.heartBtn::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 35% 30%, 
+             rgba(255,255,255,.4), 
+             transparent 30%);
+}
+
+@keyframes floatUp{
+  from{ transform:translateY(0); opacity:1;}
+  to{ transform:translateY(-120vh); opacity:0;}
+}
+
+.flyAway{ animation:floatUp 3s forwards; }
+
+
+.spark{
+ position:fixed;
+ width:6px;height:6px;
+ background:#ff4081;
+ border-radius:50%;
+ animation:sparkle 2s linear infinite;
+}
+
+@keyframes sparkle{
+ from{opacity:1;}
+ to{opacity:0;transform:translateY(-60px);}
+}
+
+/* Hide scrollbars but keep scrolling */
+::-webkit-scrollbar { width:0; height:0; }
+body,html{ scrollbar-width:none; -ms-overflow-style:none; }
+
+
+#progressWrap{position:fixed;top:6px;left:50%;transform:translateX(-50%);
+  width:80%;z-index:5000;font-size:14px;color:#c2185b}
+#bar{background:#ffe4ef;height:8px;border-radius:10px;overflow:hidden}
+#fill{width:0%;height:100%;background:#ff4081;transition:.6s}
+
+.pizza{position:fixed;width:12px;height:12px;background:#ffcc66;
+ border-radius:50% 50% 0 50%;animation:drop 4s linear;}
+@keyframes drop{from{transform:translateY(-10vh) rotate(0);}
+ to{transform:translateY(110vh) rotate(360deg);}}
+
+</style>
+</head>
+
+<body>
+<div id="progressWrap">
+  <div id="progressText">Your journey with Aman: 0%</div>
+  <div id="bar"><div id="fill"></div></div>
+</div>
+
+
+<h1>Tanvi — my laaad.. my Toto 💖</h1>
+
+<div class="card">
+<div class="story">
+<b>15 August 2025</b> — the day destiny low‑key giggled and pushed us together.<br/><br/>
+
+Terrible pizza that should be illegal 🍕,<br/>
+tea that saved the date like a superhero,<br/>
+and that scooty ride where my chin claimed your shoulder<br/>
+as permanent property.<br/><br/>
+
+I asked if you’d be my girlfriend…<br/>
+and you said YES.<br/>
+You became the first person I ever loved.<br/><br/>
+
+Zoo dates, 25+ meetings,<br/>
+2–3 times every month,<br/>
+and those two days at my place when walls feel happier.<br/><br/>
+
+You are a cutie, my Toto,<br/>
+and yes… bhot haram bhi 😄<br/><br/>
+
+So I’m asking again, with extra drama 💌
+</div>
+
+<h2>Will you be my Valentine?</h2>
+
+<div id="box">
+<button id="yes" onclick="flyThenLove(event)" class="heartBtn">
+<span>
+  Yes, always
+</span>
+</button>
+
+ <button id="no" onmouseover="run()">No</button>
+</div>
+</div>
+
+<div id="voiceBox" class="card">
+ <h3>Your Aman speaking 🎤</h3>
+ <button onclick="playVoice()" id="voiceBtn">▶ Play Voice</button>
+ <audio id="voiceNote">
+   <source src="https://example.com/voice_note.mp3" />
+ </audio>
+</div>
+
+<div id="timeline" class="card">
+<h3>Our Chapters ✨</h3>
+<div class="timeline-item">Aug 15 — Pizza chaos + tea rescue</div>
+<div class="timeline-item">Scooty ride — chin on shoulder</div>
+<div class="timeline-item">Zoo date — you laughing at monkeys</div>
+<div class="timeline-item">25+ meets — our mini tradition</div>
+<div class="timeline-item">Two‑day stays — home mode</div>
+</div>
+
+<div id="gallery" class="card">
+<h3>Us in pixels 📸</h3>
+
+<img src="https://glance.appinfoinc.com/Content/Legends/rtti/Legend.png" />
+
+<img src="https://glance.appinfoinc.com/Content/Legends/rtti/Legend.png" />
+
+<img src="https://glance.appinfoinc.com/Content/Legends/rtti/Legend.png" />
+
+<img src="https://glance.appinfoinc.com/Content/Legends/rtti/Legend.png" />
+
+<img src="https://glance.appinfoinc.com/Content/Legends/rtti/Legend.png" />
+
+<img src="https://photos.app.goo.gl/1b4tLUUqyFmHMNNS7" />
+
+<img src="https://photos.app.goo.gl/1b4tLUUqyFmHMNNS7" />
+
+<img src="https://photos.app.goo.gl/1b4tLUUqyFmHMNNS7" />
+
+<img src="https://photos.app.goo.gl/1b4tLUUqyFmHMNNS7" />
+</div>
+
+<div id="videoBox" class="card">
+<h3>Memory reel 🎬</h3>
+<video width="90%" controls>
+ <source src="https://example.com/video1.mp4" />
+</video>
+</div>
+
+
+<div id="quizSection" class="card" style="display:none">
+<h3>Little Toto Quiz 🎀</h3>
+<div id="quizBox">
+<div class="inputBox">
+  <input id="qa" required />
+  <label>Your answer, Toto…</label>
+<button class="quizBtn" onclick="checkQ()">Answer</button>
+
+</div>
+
+</div>
+<div id="quizMsg" style="margin-top:10px;color:#c2185b"></div>
+
+
+</div>
+<div id="finalMessage" class="card">
+Tanvi, you are my calm + my chaos,<br/>
+my favorite notification,<br/>
+my Toto 🌷<br/><br/>
+
+From cursed pizza to blessed days,<br/>
+I choose you — every version of every day.
+</div>
+
+<script>
+function playVoice(){
+ const a=document.getElementById('voiceNote');
+ const b=document.getElementById('voiceBtn');
+ if(a.paused){a.play();b.innerHTML='⏸ Pause Voice';}
+ else{a.pause();b.innerHTML='▶ Play Voice';}
+}
+function love(){
+const yesBtn = document.getElementById('yes');
+
+  yesBtn.classList.add('heartFly');
+
+ document.getElementById('box').style.display='none';
+ ['voiceBox','timeline','gallery','videoBox','finalMessage']
+ .forEach(id=>document.getElementById(id).style.display='block');
+
+ for(let i=0;i<70;i++){
+  let h=document.createElement('div');
+  h.className='heart';
+  h.innerHTML='❤';
+  h.style.left=Math.random()*100+'vw';
+  h.style.animationDuration=(4+Math.random()*4)+'s';
+  document.body.appendChild(h);
+
+  let s=document.createElement('div');
+  s.className='spark';
+  s.style.left=Math.random()*100+'vw';
+  s.style.top=Math.random()*100+'vh';
+  document.body.appendChild(s);
+ }
+}
+function flyThenLove(e){
+  const b = e.target;
+  b.classList.add('flyAway');
+
+  setTimeout(()=>{
+    love();        // call your ORIGINAL function
+  }, 1400);
+
+}
+
+function run(){
+ const b=document.getElementById('no');
+ b.style.top=Math.random()*80+'vh';
+ b.style.left=Math.random()*80+'vw';
+}
+
+// ----- NEW FEATURES ADDED -----
+function setProgress(p){
+ document.getElementById('fill').style.width=p+'%';
+ document.getElementById('progressText').innerText=
+   'Your journey with Aman: '+p+'%';
+}
+
+// Easter egg on name clicks
+let amanTaps=0;
+const nameEl=document.querySelector('h1');
+if(nameEl){
+ nameEl.addEventListener('click',()=>{
+  amanTaps++;
+  if(amanTaps===5){
+    alert('Secret found! Aman owes you one chocolate 🍫');
+    rainPizza();
+    amanTaps=0;
+  }
+ });
+}
+
+// Day/Night theme
+(function(){
+ const h=new Date().getHours();
+ if(h>=19||h<6){
+   document.body.style.background=
+   'radial-gradient(circle at top,#2a1a3d,#120d1f)';
+   document.body.style.color='#ffd6e7';
+ }
+})();
+
+// Upgrade No button
+const jokes=[
+ 'No button is on vacation 🌴',
+ 'System error: love only',
+ 'Try the pink one, detective',
+ 'This button respects Tanvi',
+ 'Powered by stubbornness'
+];
+
+const oldRun=window.run;
+window.run=function(){
+ if(oldRun) oldRun();
+ const b=document.getElementById('no');
+ if(b) b.innerText=jokes[Math.floor(Math.random()*jokes.length)];
+};
+
+// Pizza confetti
+function rainPizza(){
+ for(let i=0;i<60;i++){
+  let p=document.createElement('div');
+  p.className='pizza';
+  p.style.left=Math.random()*100+'vw';
+  p.style.animationDuration=(3+Math.random()*3)+'s';
+  document.body.appendChild(p);
+ }
+}
+
+// Hook progress into existing love()
+const oldLove=window.love;
+window.love=function(){
+ if(oldLove) oldLove();
+ setProgress(60);
+};
+
+// Stop bg music on video/voice
+function pauseMusic(){
+ const m=document.getElementById('bgMusic');
+ if(m) m.pause();
+}
+function resumeMusic(){
+ const m=document.getElementById('bgMusic');
+ if(m) m.play().catch(()=>{});
+}
+
+const vid=document.querySelector('video');
+if(vid){
+ vid.addEventListener('play',pauseMusic);
+ vid.addEventListener('pause',resumeMusic);
+ vid.addEventListener('ended',()=>{resumeMusic();setProgress(100);rainPizza();});
+}
+
+const voice=document.getElementById('voiceNote');
+if(voice){
+ voice.addEventListener('play',pauseMusic);
+ voice.addEventListener('pause',resumeMusic);
+ voice.addEventListener('ended',resumeMusic);
+}
+
+
+// ===== QUIZ LOGIC =====
+const quizData = [
+ {q:"Who eats more momos? You/Me", a:"tanvi"},
+ {q:"Do you believe in god?", a:"yes"},
+ {q:"whts the name of your god?", a:"aman"},
+ {q:"which body part i love the most?", a:"pussy"},
+ {q:"who i love the most?", a:"mera maal"},
+ {q:"The day you called me first time?(nth month)", a:"5th august"}
+];
+
+let qi2 = 0;
+
+function showQuiz(){
+ document.getElementById('quizSection').style.display='block';
+ renderQ();
+}
+
+function renderQ(){
+ const box=document.getElementById('quizBox');
+ box.innerHTML = `<p>${quizData[qi2].q}</p>
+ <input id='qa'/>
+ <button onclick='checkQ()'>Answer</button>`;
+}
+
+function checkQ(){
+ const v=document.getElementById('qa').value.toLowerCase();
+ if(v.includes(quizData[qi2].a)){
+   qi2++;
+   document.getElementById('quizMsg').innerText="Correct 💖";
+   if(qi2>=quizData.length){
+     document.getElementById('quizMsg').innerText="You finished our quiz! 🎉";
+     rainPizza();
+     setProgress(95);
+   }else{
+     renderQ();
+   }
+ }else{
+   document.getElementById('quizMsg').innerText="No skipping, think again 😌";
+ }
+}
+
+// show quiz when gallery opened
+const oldLove2 = window.love;
+window.love = function(){
+ if(oldLove2) oldLove2();
+ setTimeout(showQuiz,1500);
+};
+
+// ===== EASTER EGG VISIBLE =====
+let clickCount=0;
+const title=document.querySelector('h1');
+if(title){
+ title.style.cursor='pointer';
+ title.addEventListener('click',()=>{
+   clickCount++;
+   if(clickCount===5){
+     alert('Easter egg unlocked! Pizza rain activated 🍕');
+     rainPizza();
+     clickCount=0;
+   }
+ });
+}
+
+</script></body>
+</html>
