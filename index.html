@@ -287,6 +287,10 @@ So I’m asking again, with extra drama 💌
  </audio>
 </div>
 
+<audio id="bgMusic" loop>
+  <source src="music/song.mp3" type="audio/mp3">
+</audio>
+
 <div id="timeline" class="card">
 <h3>Our Chapters ✨</h3>
 <div class="timeline-item">Aug 15 — Pizza chaos + tea rescue</div>
@@ -379,6 +383,7 @@ const yesBtn = document.getElementById('yes');
 function flyThenLove(e){
   const b = e.target;
   b.classList.add('flyAway');
+  document.getElementById("bgMusic").play();
 
   setTimeout(()=>{
     love();        // call your ORIGINAL function
