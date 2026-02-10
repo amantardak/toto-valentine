@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Toto 💖 Aman</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;500&display=swap');
+
+body{
+  margin:0;
+  background: radial-gradient(circle at top, #ffd6e7, #fff1f6, #ffe4ef);
+  font-family:'Poppins',sans-serif;
+  text-align:center;
+  overflow-x:hidden;
+}
+
+h1{
+  font-family:'Dancing Script',cursive;
+  color:#c2185b;
+  font-size:42px;
+  margin-top:20px;
+  animation: glow 3s infinite alternate;
+}
+
+@keyframes glow{
+ from{ text-shadow:0 0 5px #ff80ab;}
+ to{ text-shadow:0 0 18px #ff4081;}
+}
+
+.card{
+  background:white;
+  max-width:600px;
+  margin:20px auto;
+  padding:18px;
+  border-radius:18px;
+  box-shadow:0 0 20px rgba(0,0,0,0.1);
+}
+
+.story{
+  line-height:1.7;
+  color:#5d1049;
+}
+
+button{
+  padding:12px 24px;
+  border-radius:30px;
+  border:none;
+  margin:10px;
+  cursor:pointer;
+  font-size:17px;
+  transition:.3s;
+}
+
+#yes{background:#ff4081;color:white;}
+#yes:hover{transform:scale(1.1);box-shadow:0 0 12px pink;}
+
+#no{background:#333;color:white;position:absolute;}
+
+#voiceBox,#gallery,#videoBox,#timeline,#finalMessage{display:none;}
+
+img{
+ width:46%;
+ margin:4px;
+ border-radius:14px;
+ box-shadow:0 0 8px rgba(0,0,0,.1);
+ transition:.3s;
+}
+
+img:hover{transform:scale(1.05);}
+
+.timeline-item{
+ background:#fff;
+ margin:8px;
+ padding:10px;
+ border-radius:12px;
+ border-left:4px solid #ff4081;
+ text-align:left;
+}
+
+.heart{
+ position:fixed;
+ color:#ff4081;
+ animation: float 7s linear infinite;
+ font-size:20px;
+}
+
+@keyframes float{
+ from{transform:translateY(110vh) rotate(0);}
+ to{transform:translateY(-10vh) rotate(360deg);}
+}
+
+.spark{
+ position:fixed;
+ width:6px;height:6px;
+ background:#ff4081;
+ border-radius:50%;
+ animation:sparkle 2s linear infinite;
+}
+
+@keyframes sparkle{
+ from{opacity:1;}
+ to{opacity:0;transform:translateY(-60px);}
+}
+
+/* Hide scrollbars but keep scrolling */
+::-webkit-scrollbar { width:0; height:0; }
+body,html{ scrollbar-width:none; -ms-overflow-style:none; }
+
+</style>
+</head>
+
+<body>
+
+<h1>Tanvi — my laaad.. my Toto 💖</h1>
+
+<div class="card">
+<div class="story">
+<b>15 August 2025</b> — the day destiny low‑key giggled and pushed us together.<br/><br/>
+
+Terrible pizza that should be illegal 🍕,<br/>
+tea that saved the date like a superhero,<br/>
+and that scooty ride where my chin claimed your shoulder<br/>
+as permanent property.<br/><br/>
+
+I asked if you’d be my girlfriend…<br/>
+and you said YES.<br/>
+You became the first person I ever loved.<br/><br/>
+
+Zoo dates, 25+ meetings,<br/>
+2–3 times every month,<br/>
+and those two days at my place when walls feel happier.<br/><br/>
+
+You are a cutie, my Toto,<br/>
+and yes… bhot haram bhi 😄<br/><br/>
+
+So I’m asking again, with extra drama 💌
+</div>
+
+<h2>Will you be my Valentine?</h2>
+
+<div id="box">
+ <button id="yes" onclick="love()">Yes, always</button>
+ <button id="no" onmouseover="run()">No</button>
+</div>
+</div>
+
+<div id="voiceBox" class="card">
+ <h3>Your Aman speaking 🎤</h3>
+ <button onclick="playVoice()" id="voiceBtn">▶ Play Voice</button>
+ <audio id="voiceNote">
+   <source src="https://example.com/voice_note.mp3" />
+ </audio>
+</div>
+
+<div id="timeline" class="card">
+<h3>Our Chapters ✨</h3>
+<div class="timeline-item">Aug 15 — Pizza chaos + tea rescue</div>
+<div class="timeline-item">Scooty ride — chin on shoulder</div>
+<div class="timeline-item">Zoo date — you laughing at monkeys</div>
+<div class="timeline-item">25+ meets — our mini tradition</div>
+<div class="timeline-item">Two‑day stays — home mode</div>
+</div>
+
+<div id="gallery" class="card">
+<h3>Us in pixels 📸</h3>
+
+<img src="https://glance.appinfoinc.com/Content/Legends/rtti/Legend.png" />
+
+<img src="https://glance.appinfoinc.com/Content/Legends/rtti/Legend.png" />
+
+<img src="https://glance.appinfoinc.com/Content/Legends/rtti/Legend.png" />
+
+<img src="https://glance.appinfoinc.com/Content/Legends/rtti/Legend.png" />
+
+<img src="https://glance.appinfoinc.com/Content/Legends/rtti/Legend.png" />
+
+<img src="https://photos.app.goo.gl/1b4tLUUqyFmHMNNS7" />
+
+<img src="https://photos.app.goo.gl/1b4tLUUqyFmHMNNS7" />
+
+<img src="https://photos.app.goo.gl/1b4tLUUqyFmHMNNS7" />
+
+<img src="https://photos.app.goo.gl/1b4tLUUqyFmHMNNS7" />
+</div>
+
+<div id="videoBox" class="card">
+<h3>Memory reel 🎬</h3>
+<video width="90%" controls>
+ <source src="https://example.com/video1.mp4" />
+</video>
+</div>
+
+<div id="finalMessage" class="card">
+Tanvi, you are my calm + my chaos,<br/>
+my favorite notification,<br/>
+my Toto 🌷<br/><br/>
+
+From cursed pizza to blessed days,<br/>
+I choose you — every version of every day.
+</div>
+
+<script>
+function playVoice(){
+ const a=document.getElementById('voiceNote');
+ const b=document.getElementById('voiceBtn');
+ if(a.paused){a.play();b.innerHTML='⏸ Pause Voice';}
+ else{a.pause();b.innerHTML='▶ Play Voice';}
+}
+
+function love(){
+ document.getElementById('box').style.display='none';
+ ['voiceBox','timeline','gallery','videoBox','finalMessage']
+ .forEach(id=>document.getElementById(id).style.display='block');
+
+ for(let i=0;i<70;i++){
+  let h=document.createElement('div');
+  h.className='heart';
+  h.innerHTML='❤';
+  h.style.left=Math.random()*100+'vw';
+  h.style.animationDuration=(4+Math.random()*4)+'s';
+  document.body.appendChild(h);
+
+  let s=document.createElement('div');
+  s.className='spark';
+  s.style.left=Math.random()*100+'vw';
+  s.style.top=Math.random()*100+'vh';
+  document.body.appendChild(s);
+ }
+}
+
+function run(){
+ const b=document.getElementById('no');
+ b.style.top=Math.random()*80+'vh';
+ b.style.left=Math.random()*80+'vw';
+}
+</script>
+
+</body>
+</html>
