@@ -611,7 +611,9 @@ function showQuiz(){
 
 function renderQ(){
  const box=document.getElementById('quizBox');
-     document.getElementById('quizMsg').innerText="Correct 💖";
+setTimeout(function() {
+  document.getElementById('quizMsg').innerText = "Correct 💖";
+}, 1500);
 
  box.innerHTML = `<p>${quizData[qi2].q}</p>
  <input id='qa'/>
