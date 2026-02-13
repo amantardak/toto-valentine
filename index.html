@@ -614,8 +614,9 @@ function showQuiz(){
 function renderQ(){
  const box=document.getElementById('quizBox');
 setTimeout(function() {
+  if(qi2!=0){
   document.getElementById('quizMsg').innerText = "Correct 💖";
-}, 1500);
+  }}, 1500);
 
  box.innerHTML = `<p>${quizData[qi2].q}</p>
  <input id='qa'/>
@@ -628,7 +629,7 @@ function checkQ(){
    qi2++;
    document.getElementById('quizMsg').innerText="Correct 💖";
    if(qi2>=quizData.length){
-     document.getElementById('quizMsg').innerText="You finished our quiz! 🎉";
+     document.getElementById('quizMsg').innerText="finished 🎉, you are always right my cutiepie!😊";
      rainPizza();
      setProgress(95);
    }else{
