@@ -611,6 +611,8 @@ function showQuiz(){
 
 function renderQ(){
  const box=document.getElementById('quizBox');
+     document.getElementById('quizMsg').innerText="Correct 💖";
+
  box.innerHTML = `<p>${quizData[qi2].q}</p>
  <input id='qa'/>
  <button onclick='checkQ()'>Answer</button>`;
