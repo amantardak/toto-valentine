@@ -628,7 +628,11 @@ function checkQ(){
    }else{
      renderQ();
    }
- }else{
+ }
+else if(v.trim()!=""){
+   document.getElementById('quizMsg').innerText="galat jawab, aapko milta hai think again 😌";
+}
+else{
    document.getElementById('quizMsg').innerText="No skipping, think again 😌";
  }
 }
