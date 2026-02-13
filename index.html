@@ -5,6 +5,8 @@
 <title>Toto 💖 Aman</title>
 
 <style>
+
+
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;500&display=swap');
 
 body{
@@ -231,6 +233,35 @@ body,html{ scrollbar-width:none; -ms-overflow-style:none; }
 @keyframes drop{from{transform:translateY(-10vh) rotate(0);}
  to{transform:translateY(110vh) rotate(360deg);}}
 
+
+
+
+
+
+
+.timeline-item{
+  background:#fff;
+  padding:20px;
+  border-radius:18px;
+  margin:20px auto;
+  width:80%;
+  font-family:'Playfair Display',serif;
+  box-shadow:0 10px 25px rgba(0,0,0,.1);
+  transform:rotate(-1deg);
+  transition:.4s;
+}
+
+.timeline-item:nth-child(even){
+  transform:rotate(1deg);
+}
+
+.timeline-item:hover{
+  transform:scale(1.04) rotate(0deg);
+}
+
+
+
+
 </style>
 </head>
 
@@ -289,12 +320,75 @@ So I’m asking again, with extra drama 💌
 
 <div id="timeline" class="card">
 <h3>Our Chapters ✨</h3>
-<div class="timeline-item">Aug 15 — Pizza chaos + tea rescue</div>
-<div class="timeline-item">Scooty ride — chin on shoulder</div>
-<div class="timeline-item">Zoo date — you laughing at monkeys</div>
-<div class="timeline-item">25+ meets — our mini tradition</div>
-<div class="timeline-item">Two‑day stays — home mode</div>
+
+<div class="timeline-item">
+<b>December 2024</b><br>
+OmeTV. Random screen. Random moment.  
+I asked you for a date.  
+You said yes.  
+We didn’t meet… but something had already started.
 </div>
+
+<div class="timeline-item">
+<b>May — The Comeback Text</b><br>
+You texted again.  
+We made plans.  
+Still didn’t meet.  
+Then semester break came…,  
+just small texts, slow replies, quiet curiosity.
+</div>
+
+<div class="timeline-item">
+<b>Vacation Conversations</b><br>
+You said, “Let’s talk properly first.”  
+And we did.  
+Long chats. Late chats.  
+Getting to know each other beyond screens.
+</div>
+
+<div class="timeline-item">
+<b>15 August — The First Real Day</b><br>
+Our first proper date.  
+I bought flowers for the first time in my life.
+</div>
+
+<div class="timeline-item">
+<b>After That Day</b><br>
+It wasn’t occasional anymore.  
+It became regular.  
+You came to my place.  
+11 AM to 3 PM on Saturdays— our little time window.
+</div>
+
+<div class="timeline-item">
+<b>Everything Between</b><br>
+Markets. Parks. Random walks.  
+Making memories everywhere.  
+That park… where we did kissi vissi.
+</div>
+
+<div class="timeline-item">
+<b>The Zoo Day 🐒</b><br>
+We went to the zoo.  
+But honestly?  
+I was watching you more than the animals.
+</div>
+
+<div class="timeline-item">
+<b>Morni Hills 🌊</b><br>
+Near the lake.  
+Wind. Silence. Us.  
+It felt soo peaceful.
+</div>
+
+<div class="timeline-item">
+<b>Plans Made. Plans Cancelled.</b><br>
+Some journeys wait.  
+Some are still pending.
+</div>
+
+</div>
+
 
 <div id="gallery" class="card">
 <h3>Us in pixels 📸</h3>
@@ -554,7 +648,7 @@ function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
     height: '480',
     width: '100%',
-    videoId: 'OGXxjgv2MFM', // replace this
+    videoId: '6lfKORAf4LM', // replace this
      playerVars: {
       rel: 0,
       playsinline: 1
